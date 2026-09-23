@@ -48,7 +48,7 @@ function Stopwatch(){
 
         if(hours < 1){
             return `${minutes}:${seconds}:${milliseconds}`;
-        } else if(hours >= 1){
+        } else {
             return `${hours}:${minutes}:${seconds}:${milliseconds}`;
         }
     }

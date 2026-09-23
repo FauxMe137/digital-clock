@@ -1,9 +1,11 @@
 import DigitalClock from "./DigitalClock";
 import Stopwatch from "./Stopwatch";
+import Timer from "./Timer";
 
 function App() {
-  return <div>
+  return <div className="app-container">
     <Stopwatch/>
+    <Timer/>
     <DigitalClock/>
   </div>;
 }

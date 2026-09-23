@@ -17,6 +17,11 @@ body{
   background-position: center;
   background-attachment: fixed;
 }
+.app-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
 .stopwatch {
   display: flex;
   flex-direction: column;
@@ -24,6 +29,15 @@ body{
   border: 5px solid black;
   border-radius: 50px;
   background-color: white;
+  padding: 30px;
+}
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 5px solid black;
+  border-radius: 50px;
+  background-color: hsl(0, 0%, 12%);
   padding: 30px;
 }
 .display {
@@ -51,6 +65,12 @@ body{
 .start-button:hover {
   background-color: hsl(115, 100%, 35%);
 }
+.pause-button {
+  background-color: hsl(0, 0%, 50%);
+}
+.pause-button:hover {
+  background-color: hsl(0, 0%, 55%);
+}
 .stop-button {
   background-color: hsl(10, 90%, 50%);
 }
@@ -63,10 +83,16 @@ body{
 .reset-button:hover {
   background-color: hsl(205, 90%, 65%);
 }
+.set-timer-button {
+  background-color: hsl(60, 90%, 50%);
+}
+.set-timer-button:hover {
+  background-color: hsl(60, 90%, 45%);
+}
 
 .container {
   backdrop-filter: blur(3px);
-  margin-top: 100px;
+  margin-top: 20px;
   border-radius: 20px;
   padding: 5px 0;
   text-align: center;
@@ -76,4 +102,70 @@ body{
   font-size: 6rem;
   font-weight: bold;
   text-shadow: 3px 3px 5px hsl(0, 0%, 0%, 0.75);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  z-index: 1000;
+}
+
+.duration-picker {
+  width: min(90%, 400px);
+  padding: 2rem;
+
+  background: white;
+  border-radius: 12px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.duration-picker h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.time-inputs {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.time-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.time-input input {
+  width: 70px;
+  padding: 0.6rem;
+
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.time-inputs > span {
+  padding-bottom: 0.6rem;
+  font-size: 1.5rem;
+}
+
+.picker-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.picker-buttons button {
+  padding: 0.6rem 1rem;
+  cursor: pointer;
 }
